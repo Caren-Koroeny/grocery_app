@@ -8,13 +8,15 @@
 </head>
 <body>
     {% if current_user.is_authenticated %}
-    "<p>Hello, {{current_user.username }}</p>
-        ! You're logged in! Email: {{ current_user.email }}</p>"
+    <p>Hello, {{current_user.username }} You're logged in! Email: {{ current_user.email }}</p>
+    <br>
         <div>
-            <p>Google Profile Picture:</p>"
-            <img src="{{current_user.profile_pic}}" alt="Google profile pic"></img>
+            <p>Google Profile Picture:</p>
+            <img src="{{current_user.profile_pic}}" alt="Google profile pic" />
+   
         </div>
-        <a href="{{ url_for('auth.logout')}}">+Logout</a>
+        <br>
+        <a href="{{ url_for('auth.logout')}}">Logout</a>
     {% else %}
     <a href="{{ url_for('auth.login')}}">+Login</a>
     
