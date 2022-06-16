@@ -1,3 +1,5 @@
 # Simple grocery shopping.
+ 
+ ## About the Project :
 
-## user login using google service provider.
+- The aim this Grocey management app is to allow admin to modify the products of the shop and enter each order details.
