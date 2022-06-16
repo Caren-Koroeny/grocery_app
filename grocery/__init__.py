@@ -5,6 +5,7 @@ from grocery import config
 from flask_migrate import Migrate
 import os
 
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -25,10 +26,12 @@ def create_app():
         
         from grocery.routes import views
         from grocery.auth.route import auth
+        from grocery.products.routes import products
         
         
         app.register_blueprint(views)
         app.register_blueprint(auth)
+        app.register_blueprint(products)
         
         db.create_all()
         migrate.init_app(app, db)

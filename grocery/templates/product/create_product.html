@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products List</title>
+</head>
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="alert alert-{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock content %}
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+    <p>
+        {{form.name.label }}
+        {{ form.name(size=20)}}
+    </p>
+    <p>
+      {{<form action="" class="price_per_unit"></form>.label}}
+      {{<form action="" class="price_per_unit"></form>}}
+  </p>
+    <p>
+      {{form.discount.label }}
+      {{ form.discount}}
+  </p>
+  <p>
+    {{form.stock.label}}
+    {{form.stock}}
+</p>
+    <p>
+        {{form.description.label}}
+        {{form.description}}
+    </p>
+    
+      <p>
+          {{form.quantity.label}}
+          {{form.quantity}}
+      </p>
+      <p>
+          {{form.submit}}
+      </p>
+      
+    </form>
+    <a href="{{ url_for('view.logout') }}">Logout. </a>
+</body>
+</html> 

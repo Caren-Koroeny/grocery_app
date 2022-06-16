@@ -13,6 +13,7 @@ authlib = "*"
 requests = "*"
 oauthlib = "*"
 python-dotenv = "*"
+pillow = "*"
 
 [dev-packages]
 

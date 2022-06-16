@@ -17,3 +17,9 @@
 - Google login with Oauth 2.0 and OIDC.
 
 - Grocery List.
+
+# Built With
+
+ - Frontend: HTML/CSS
+ - Backend: Python, Flask
+ - Database: MySQL
